@@ -10,7 +10,7 @@ describe "StaticPages" do
 
   describe "Home page" do
     before { visit root_path }
-    let(:page_title) { ' ' }
+    let(:page_title) { '' }
 
     it_should_behave_like "all static pages"
     it { should have_content('Join a Group') }
