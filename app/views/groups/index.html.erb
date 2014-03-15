@@ -1,0 +1,19 @@
+<h1>Groups:</h1>
+<div class="row">
+  <% @group.each do |group| %>
+  <div class="row group-container">
+    <div class="small-4 columns">
+      <img src="http://placehold.it/150x150">
+    </div>
+    <div class="small-8 columns">
+      <p class="group-name">
+        <%= link_to group.name, group_path(group) %>
+      </p>
+        <br>
+      <p class="group-description">
+        <%= group.description %>
+      </p>
+    </div>
+  </div>
+  <% end %>
+</div>

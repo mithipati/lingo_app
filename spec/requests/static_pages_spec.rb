@@ -25,4 +25,13 @@ describe "StaticPages" do
     it { should have_content('twitter') }
   end
 
+  describe "all links work" do
+    before { visit root_path }
+
+    click_link "Contact"
+    it { should have_title('Contact') }
+    click_link "LINGO"
+    it { should have_content('Join a Group') }
+  end
+
 end
