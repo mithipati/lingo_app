@@ -6,7 +6,6 @@ describe "GroupPages" do
   let(:description) { "Bootcamp for full stack developers" }
 
   describe "make a new group" do
-    # let(:group) { FactoryGirl.create(:group) }
     before { visit new_group_path }
 
     it { should have_content('New group') }
@@ -27,11 +26,14 @@ describe "GroupPages" do
         expect { click_button 'Create' }.to change(Group, :count).by(1)
       end
 
-      it { should have_title(name) }
-      it { should have_content(name) }
-      it { should have_content(description) }
-      # it { should have_selector('div.alert.alert-success') }
-    end
+      describe "after saving the group" do
+        before { click_button 'Create' }
 
+        it { should have_title(name) }
+        it { should have_content(name) }
+        it { should have_content(description) }
+        it { should have_selector('div.alert.alert-success') }
+      end
+    end
   end
 end
