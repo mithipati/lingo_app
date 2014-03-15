@@ -33,6 +33,8 @@ describe "StaticPages" do
     expect(page).to have_content('twitter')
     click_link 'LINGO'
     expect(page).to have_content('Join a Group')
+    click_link 'Browse groups'
+    expect(page).to have_title('Groups')
   end
 
 end
