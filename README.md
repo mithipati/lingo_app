@@ -1,16 +1,16 @@
 # Lingo App
 
-## About
+### About
 
 Application for sharing lingo in various groups.
 
-## Technologies Used
+### Technologies Used
 
 * Backend: Rails
 * Frontend: JavaScript, Twitter Bootstrap
 * APIs: Urban Dictionary, Meme Generator
 
-## Contributing
+### Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
