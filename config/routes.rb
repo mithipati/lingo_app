@@ -1,5 +1,6 @@
 LingoApp::Application.routes.draw do
   resources :groups, except: [:destroy]
+  resources :users, except: [:index]
   root 'static_pages#home'
   match '/contact', to: 'static_pages#contact', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
