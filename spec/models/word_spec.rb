@@ -1,5 +1,11 @@
 require 'spec_helper'
 
 describe Word do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  before { @word = Word.new(name: "Coder", definition: "Someone who types really well") }
+
+  subject { @word }
+
+  it { should respond_to(:name) }
+
 end
