@@ -5,10 +5,14 @@ describe "GroupPages" do
   let(:name) { "MakerSquare" }
   let(:description) { "Bootcamp for full stack developers" }
 
-  describe "make a new group" do
+  describe "new group page" do
     before { visit new_group_path }
 
     it { should have_content('New group') }
+  end
+
+  describe "new group" do
+    before { visit new_group_path }
 
     describe "with invalid information" do
       it "should not create a group" do
@@ -36,4 +40,36 @@ describe "GroupPages" do
       end
     end
   end
+
+  describe "should have an 'Add word' button" do
+    let(:group) { FactoryGirl.create(:group) }
+    before { visit group_path(group) }
+
+    it { should have_content(group.name) }
+    it { should have_title(full_title(group.name)) }
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

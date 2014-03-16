@@ -1,10 +1,12 @@
 class GroupsController < ApplicationController
   def index
-    @group = Group.all
+    @groups = Group.all
   end
 
   def show
     @group = Group.find(params[:id])
+    # test
+    @words = Word.all
   end
 
   def new

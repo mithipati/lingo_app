@@ -4,3 +4,7 @@
 </h3>
 <%= @group.description %>
 <h4>Lingo:</h4>
+<% @words.each do |word| %>
+  <%= word.name %>
+  <%= word.definition %>
+<% end %>
