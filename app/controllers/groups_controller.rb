@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     # test
     @words = Word.all
+    @word = Word.new
   end
 
   def new

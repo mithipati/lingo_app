@@ -46,10 +46,10 @@ describe "GroupPages" do
     before { visit group_path(group) }
 
     it { should have_content(group.name) }
-    it { should have_content('Def') }
-    it { should have_content('Example') }
+    # xit { should have_content('Def') }
+    # xit { should have_content('Example') }
     it { should have_title(full_title(group.name)) }
-    it { should have_link 'Add word' }
+    # it { should have_link 'Add word' }
   end
 end
 
