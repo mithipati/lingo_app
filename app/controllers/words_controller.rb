@@ -1,10 +1,11 @@
 class WordsController < ApplicationController
   def create
-    @word = Word.new(word_params)
+    @group = Group.find(params[:group_id])
+    @word = @group.words.new(word_params)
 
     respond_to do |format|
       if @word.save
-        format.html { redirect_to @word, notice: 'Word added' }
+        format.html { redirect_to @word }
         format.js {}
         format.json { render json: @word, status: :created, location: @word }
       else
@@ -13,7 +14,6 @@ class WordsController < ApplicationController
       end
     end
   end
-
 
   private
     def word_params

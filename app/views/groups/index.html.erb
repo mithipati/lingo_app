@@ -1,4 +1,5 @@
 <% provide(:title, 'Groups') %>
+<%= link_to "Back", root_path %>
 <h1>Groups:</h1>
 <div class="row">
   <% @groups.each do |group| %>
@@ -9,6 +10,7 @@
     <div class="small-8 columns">
       <p class="group-name">
         <%= link_to group.name, group_path(group) %>
+        (<%= group.words.count %>)
       </p>
         <br>
       <p class="group-description">
