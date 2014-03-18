@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+include ApplicationHelper
+
   def index
     @groups = Group.all
   end
@@ -7,6 +9,11 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @words = @group.words.all
     @word = Word.new
+
+    @response = uni_get(response_for("font"))
+
+    puts @response.body
+
   end
 
   def new
