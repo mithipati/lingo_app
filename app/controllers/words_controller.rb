@@ -2,7 +2,6 @@ class WordsController < ApplicationController
   before_action :set_instance_variables, only: [:create]
 
   def create
-    # @word = @group.words.new(word_params)
     @word = Words.new(word_params)
 
     respond_to do |format|

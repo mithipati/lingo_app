@@ -8,7 +8,7 @@
 <br>
 
 <div id="word-form">
-  <%= form_for(@word, remote: true) do |f| %>
+  <%= form_for([@group, Word.new], remote: true) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :definition %>
