@@ -8,20 +8,40 @@
 <br>
 
 <div id="word-form">
-  <%= form_for([@group, Word.new], remote: true) do |f| %>
-    <%= f.label :name %><br>
+  <%= form_for(@word, remote: true) do |f| %>
+    <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= f.label :definition %><br>
+    <%= f.label :definition %>
     <%= f.text_area :definition %>
     <%= f.submit 'Create', class: "btn btn-large btn-primary"%>
   <% end %>
 </div>
 
+
+<!-- Meme form for API GET request -->
+
+<div id="meme-form">
+  <%= form_for(@meme) do |f| %>
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+    <%= f.label :top %>
+    <%= f.text_field :top %>
+    <%= f.label :bottom %>
+    <%= f.text_field :bottom %>
+    <%= f.submit 'Save meme' %>
+  <% end %>
+</div>
+
+<input type="button" value="New Meme" id="meme-button">
+
+<div id="meme-container"></div>
+
+
 <div id="word-container">
     <%= render @words %>
 </div>
 
-<%= debug(params) if Rails.env.development? %>
+
 
 
 

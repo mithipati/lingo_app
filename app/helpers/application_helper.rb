@@ -18,7 +18,6 @@ module ApplicationHelper
         bottom = url_encode(options[:bottom]) || "like JavaScript"
         font = url_encode(options[:font]) || "Impact"
         size = options[:size] || 50
-
         @response = base_url + "/meme?meme=#{name}&top=#{top}&bottom=#{bottom}&font=#{font}&font_size=#{size}"
       else
         "Invalid"
@@ -40,13 +39,8 @@ module ApplicationHelper
     Unirest::get response, headers: {
       "Content-Type" => "application/json",
       "Accept" => "application/json",
-      "X-Mashape-Authorization" => auth_key
+      "X-Mashape-Authorization" => ENV["MEME_APIKEY"]
     }
   end
-
-  private
-      def auth_key
-        "LZM6dmtXNY1xID13rbzVzvGQatYtR0Js"
-      end
 
 end

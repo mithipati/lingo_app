@@ -7,13 +7,9 @@ include ApplicationHelper
 
   def show
     @group = Group.find(params[:id])
-    @words = @group.words.all
+    @words = @group.words
     @word = Word.new
-
-    @response = uni_get(response_for("font"))
-
-    puts @response.body
-
+    @meme = Meme.new
   end
 
   def new

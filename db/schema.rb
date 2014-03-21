@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316210902) do
+ActiveRecord::Schema.define(version: 20140318043209) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20140316210902) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "memes", force: true do |t|
+    t.string   "image"
+    t.string   "top"
+    t.string   "bottom"
+    t.integer  "word_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "memes", ["image"], name: "index_memes_on_image"
+  add_index "memes", ["word_id"], name: "index_memes_on_word_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

@@ -1,11 +1,13 @@
 class WordsController < ApplicationController
+  before_action :set_instance_variables, only: [:create]
+
   def create
-    @group = Group.find(params[:group_id])
-    @word = @group.words.new(word_params)
+    # @word = @group.words.new(word_params)
+    @word = Words.new(word_params)
 
     respond_to do |format|
       if @word.save
-        format.html { redirect_to @word }
+        format.html { redirect_to @group, notice: "Word created" }
         format.js {}
         format.json { render json: @word, status: :created, location: @word }
       else
@@ -16,7 +18,15 @@ class WordsController < ApplicationController
   end
 
   private
+    def set_instance_variables
+      @group = Group.find(params[:group_id])
+    end
+
     def word_params
-      params.require(:word).permit(:name, :definition)
+      params.require(:word).permit(:name, :definition, :group_id)
+    end
+
+    def meme_params
+      params.require(:meme).permit(:image, :top, :bottom, :word_id)
     end
 end
