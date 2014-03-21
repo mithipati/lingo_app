@@ -7,6 +7,7 @@
 <%= @group.description %>
 <br>
 
+
 <div id="word-form">
   <%= form_for([@group, Word.new], remote: true) do |f| %>
     <%= f.label :name %>
@@ -32,7 +33,6 @@
   <% end %>
 </div>
 
-<input type="button" value="New Meme" id="meme-button">
 
 <div id="meme-container"></div>
 

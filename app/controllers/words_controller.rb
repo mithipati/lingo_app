@@ -2,7 +2,7 @@ class WordsController < ApplicationController
   before_action :set_instance_variables, only: [:create]
 
   def create
-    @word = Words.new(word_params)
+    @word = @group.words.create(word_params)
 
     respond_to do |format|
       if @word.save
@@ -10,7 +10,7 @@ class WordsController < ApplicationController
         format.js {}
         format.json { render json: @word, status: :created, location: @word }
       else
-        format.html { render action:"new" }
+        format.html { render action:"new", error: "Sorry error found" }
         format.json { render json: @word.errors, status: :unprocessable_entity }
       end
     end
