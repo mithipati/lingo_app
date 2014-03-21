@@ -1,19 +1,18 @@
 class MemesController < ApplicationController
   def create
-    @meme = Meme.new(meme_params)
-    @group = Group.find(1)
-
-    puts @meme.top
+    @meme = Meme.create(meme_params)
+    @group = Group.find(params[:id])
+    @word = Word.find(params[:word_id])
 
     if @meme.save
-      redirect_to
+      redirect_to @group
     else
-      render new
+      render @word.group
     end
   end
 
   private
       def meme_params
-        params.require(:meme).permit(:image,:top,:bottom)
+        params.require(:meme).permit(:image,:top,:bottom,:word_id)
       end
 end

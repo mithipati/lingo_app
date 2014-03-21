@@ -14,7 +14,7 @@ Group.create(name: 'MKS Brazzos', description: 'MKS students at the Brazzos offi
 Group.create(name: 'Cali Students', description: 'Cali, enough said')
 
 Word.create(name: 'Interesting', definition: 'An overused word by a particular teacher', group_id: 1)
-Word.create(name: 'Rubber Ducky', definition: 'A new way of life', group_id: 1)
-Word.create(name: 'Neon Pants', definition: "Apparently they're in again", group_id: 1)
+Word.create(name: 'RubberDucky', definition: 'A new way of life', group_id: 3)
+Word.create(name: 'NeonPants', definition: "Apparently they're in again", group_id: 4)
 Word.create(name: 'Beards', definition: "@user != coder unless @user.beard = true", group_id: 1)
-Word.create(name: 'Apple TV', definition: "It just doesn't work", group_id: 2)
+Word.create(name: 'AppleTV', definition: "It just doesn't work", group_id: 2)

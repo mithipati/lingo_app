@@ -1,8 +1,10 @@
 LingoApp::Application.routes.draw do
   resources :memes, only: [:show, :new, :create]
   resources :groups, except: [:destroy] do
-    resources :words
+    resources :words do
+    end
   end
+  resources :words, only: [:show]
   resources :users, except: [:index]
   root 'static_pages#home'
   match '/contact', to: 'static_pages#contact', via: 'get'

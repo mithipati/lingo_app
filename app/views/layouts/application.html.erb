@@ -10,11 +10,6 @@
   <%= render 'layouts/header' %>
   <%#= render 'shared/styleSample' %>
   <div class="container">
-    <% if flash.present? %>
-      <% flash.each do |name,msg| %>
-        <%= content_tag(:div, msg) %>
-      <% end %>
-    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>
