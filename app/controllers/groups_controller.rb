@@ -7,8 +7,7 @@ include ApplicationHelper
 
   def show
     @group = Group.find(params[:id])
-    @words = @group.words
-    @word = Word.new
+    @words = @group.words.reverse
     @meme = Meme.new
   end
 

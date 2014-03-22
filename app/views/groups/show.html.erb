@@ -22,25 +22,21 @@
     <%= f.text_field :name %>
     <%= f.label :definition %>
     <%= f.text_area :definition %>
+
+    <%= fields_for(@meme) do |fa| %>
+      <%= fa.label :image %>
+      <%= fa.text_field :image %>
+      <%= fa.label :top %>
+      <%= fa.text_field :top %>
+      <%= fa.label :bottom %>
+      <%= fa.text_field :bottom %>
+    <% end %>
     <%= f.submit 'Create', class: "btn btn-large btn-primary"%>
   <% end %>
 </div>
 
 
 <!-- Meme form for API GET request -->
-
-<div id="meme-form">
-  <%= form_for(@meme) do |f| %>
-    <%= f.label :image %>
-    <%= f.text_field :image %>
-    <%= f.label :top %>
-    <%= f.text_field :top %>
-    <%= f.label :bottom %>
-    <%= f.text_field :bottom %>
-    <%= f.submit 'Save meme' %>
-  <% end %>
-</div>
-
 
 <div id="meme-container"></div>
 
