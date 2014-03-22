@@ -5,10 +5,11 @@ class WordsController < ApplicationController
     @word = @group.words.new(word_params)
     @meme = @word.memes.new(meme_params)
 
-    puts params
-
     respond_to do |format|
-      if @word.save && @meme.save
+      if @word.save
+        if @meme.image.blank?
+          @meme.destroy
+        end
         format.html { redirect_to @group, notice: "Word created" }
         format.json { render json: @word, status: :created, location: @word }
         format.js {}

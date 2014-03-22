@@ -1,5 +1,4 @@
 LingoApp::Application.routes.draw do
-  resources :memes, only: [:show, :new, :create]
   resources :groups, except: [:destroy] do
     resources :words do
     end
