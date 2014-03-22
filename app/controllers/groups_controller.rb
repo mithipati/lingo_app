@@ -9,6 +9,9 @@ include ApplicationHelper
     @group = Group.find(params[:id])
     @words = @group.words.reverse
     @meme = Meme.new
+
+    @response = uni_get(response_for('images'))
+
   end
 
   def new

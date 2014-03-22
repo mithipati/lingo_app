@@ -11,7 +11,7 @@ module ApplicationHelper
   def response_for(item, options = {})
     base_url = "https://ronreiter-meme-generator.p.mashape.com"
     case item
-    when "meme"
+    when "memes"
       if options
         name = url_encode(options[:name]) || "Y U No"
         top = url_encode(options[:top]) || "Y U No"
@@ -22,9 +22,9 @@ module ApplicationHelper
       else
         "Invalid"
       end
-    when "font"
+    when "fonts"
       @response = base_url + "/fonts"
-    when "image"
+    when "images"
       @response = base_url + "/images"
     else
       "Invalid"
@@ -35,8 +35,8 @@ module ApplicationHelper
     phrase.split.join("%20")
   end
 
-  def uni_get(response)
-    Unirest::get response, headers: {
+  def uni_get(url)
+    Unirest::get url, headers: {
       "Content-Type" => "application/json",
       "Accept" => "application/json",
       "X-Mashape-Authorization" => ENV["MEME_APIKEY"]
