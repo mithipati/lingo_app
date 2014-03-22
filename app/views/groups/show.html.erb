@@ -1,0 +1,46 @@
+<% provide(:title, @group.name) %>
+<%= render 'shared/error_messages' %>
+<div class="flash-message"></div>
+<%= link_to "Back to Groups", groups_path %>
+<%# if flash.present? %>
+  <%# flash.each do |msg| %>
+    <!-- <ul>
+      <li><%#= msg %></li>
+    </ul> -->
+  <%# end %>
+<%# end %>
+<h3>
+  <%= @group.name %>
+</h3>
+<%= @group.description %>
+<br>
+
+
+<div id="word-form">
+  <%= form_for([@group, Word.new], remote: true) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :definition %>
+    <%= f.text_area :definition %>
+
+    <%= fields_for(@meme) do |fa| %>
+      <%= fa.label :image %>
+      <%= fa.text_field :image %>
+      <%= fa.label :top %>
+      <%= fa.text_field :top %>
+      <%= fa.label :bottom %>
+      <%= fa.text_field :bottom %>
+    <% end %>
+    <%= f.submit 'Create', class: "btn btn-large btn-primary"%>
+  <% end %>
+</div>
+
+
+<div id="word-container">
+    <%= render @words %>
+</div>
+
+
+
+
+

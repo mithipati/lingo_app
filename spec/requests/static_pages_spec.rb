@@ -25,4 +25,16 @@ describe "StaticPages" do
     it { should have_content('twitter') }
   end
 
+  it "should have the right links in the layout" do
+    visit root_path
+    expect(page).to have_title('Lingo')
+    click_link "Contact"
+    expect(page).to have_title('Contact')
+    expect(page).to have_content('twitter')
+    click_link 'LINGO'
+    expect(page).to have_content('Join a Group')
+    click_link 'Browse groups'
+    expect(page).to have_title('Groups')
+  end
+
 end
