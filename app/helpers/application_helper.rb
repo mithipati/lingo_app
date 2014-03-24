@@ -12,35 +12,40 @@ module ApplicationHelper
     base_url = "https://ronreiter-meme-generator.p.mashape.com"
     case item
     when "memes"
-      if options
-        name = url_encode(options[:name]) || "Y U No"
-        top = url_encode(options[:top]) || "Y U No"
-        bottom = url_encode(options[:bottom]) || "like JavaScript"
-        font = url_encode(options[:font]) || "Impact"
-        size = options[:size] || 50
-        @response = base_url + "/meme?meme=#{name}&top=#{top}&bottom=#{bottom}&font=#{font}&font_size=#{size}"
-      else
-        "Invalid"
-      end
+        meme_options = {
+          :name => "Y%20U%20No",
+          :top => "Y%20U%20No",
+          :bottom => "like%20JavaScript"
+        }.merge(options)
+
+        name = percent_encode(meme_options[:name])
+        top = percent_encode(meme_options[:top])
+        bottom = percent_encode(meme_options[:bottom])
+
+        # name = percent_encode(options[:name]) || "Y%20U%20No"
+        # top = percent_encode(options[:top]) || "Y%20U%20No"
+        # bottom = percent_encode(options[:bottom]) || "like%20JavaScript"
+        # font = percent_encode(options[:font]) || "Impact"
+        # size = options[:size] || 50
+        full_url = base_url + "/meme?meme=#{name}&top=Top%20#{top}&bottom=Bottom%20#{bottom}&font=Impact&font_size=50"
     when "fonts"
-      @response = base_url + "/fonts"
+      full_url = base_url + "/fonts"
     when "images"
-      @response = base_url + "/images"
+      full_url = base_url + "/images"
     else
       "Invalid"
     end
   end
 
-  def url_encode(phrase)
+  def percent_encode(phrase)
     phrase.split.join("%20")
   end
 
   def uni_get(url)
     Unirest::get url, headers: {
-      "Content-Type" => "application/json",
-      "Accept" => "application/json",
       "X-Mashape-Authorization" => ENV["MEME_APIKEY"]
     }
   end
+
 
 end

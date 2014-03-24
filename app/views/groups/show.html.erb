@@ -8,8 +8,6 @@
 <%= @group.description %>
 <br>
 
-
-
 <div id="word-form">
   <%= form_for([@group, Word.new], remote: true) do |f| %>
     <%= f.label :name %>
@@ -29,9 +27,20 @@
   <% end %>
 </div>
 
-
 <div id="word-container">
-    <%= render @words %>
+  <% @words.each do |word| %>
+  <h5>
+    <%= word.name %>
+  </h5>
+  <h5>Def</h5>
+    <%= word.definition %>
+  <br>
+  <h5>Example</h5>
+    <% word.memes.each do |meme| %>
+      <%= meme.image %>
+    <% end %>
+  <% end %>
+    <%#= render @words %>
 </div>
 
 

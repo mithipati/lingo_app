@@ -1,4 +1,4 @@
-$("<%= escape_javascript(render @word) %>").prependTo("#word-container");
+$("<%= escape_javascript(render 'word') %>").prependTo("#word-container");
 $(".flash-message").html("Word added!");
 $("#word_name").val('');
 $("#word_definition").val('');

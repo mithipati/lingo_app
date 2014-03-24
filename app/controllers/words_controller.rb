@@ -1,9 +1,19 @@
 class WordsController < ApplicationController
+  include ApplicationHelper
   before_action :set_instance_variables, only: [:create]
 
   def create
     @word = @group.words.new(word_params)
     @meme = @word.memes.new(meme_params)
+
+    puts @meme.image
+
+    @response = uni_get(response_for('memes'))
+
+    puts "Below is the POST request"
+
+    puts @response.body
+
 
     respond_to do |format|
       if @word.save
