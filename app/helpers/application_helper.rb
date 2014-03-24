@@ -27,7 +27,7 @@ module ApplicationHelper
         # bottom = percent_encode(options[:bottom]) || "like%20JavaScript"
         # font = percent_encode(options[:font]) || "Impact"
         # size = options[:size] || 50
-        full_url = base_url + "/meme?meme=#{name}&top=Top%20#{top}&bottom=Bottom%20#{bottom}&font=Impact&font_size=50"
+        full_url = base_url + "/meme?meme=#{name}&top=#{top}&bottom=#{bottom}&font=Impact&font_size=50"
     when "fonts"
       full_url = base_url + "/fonts"
     when "images"

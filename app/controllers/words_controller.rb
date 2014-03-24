@@ -6,14 +6,11 @@ class WordsController < ApplicationController
     @word = @group.words.new(word_params)
     @meme = @word.memes.new(meme_params)
 
-    puts @meme.image
-
-    @response = uni_get(response_for('memes'))
-
     puts "Below is the POST request"
 
-    puts @response.body
-
+    # puts @response.body
+    @response = uni_get(response_for('memes'))
+    @meme.binary = @response.body
 
     respond_to do |format|
       if @word.save
@@ -41,6 +38,6 @@ class WordsController < ApplicationController
       end
 
       def meme_params
-        params.require(:meme).permit(:image, :top, :bottom, :word_id)
+        params.require(:meme).permit(:image, :top, :bottom, :word_id, :binary)
       end
 end

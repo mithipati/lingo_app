@@ -38,12 +38,14 @@
   <h5>Example</h5>
     <% word.memes.each do |meme| %>
       <%= meme.image %>
+      <% if meme.binary %>
+        <%= image_tag url_for(:controller => "memes", :action => "show_meme", :id => meme.id) %>
+      <% end %>
     <% end %>
   <% end %>
     <%#= render @words %>
 </div>
 
-<%= image_tag url_for(:controller => "memes", :action => "show", :id => @meme.id) %>
 
 
 
