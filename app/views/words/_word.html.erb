@@ -6,8 +6,8 @@
 <br>
 <h5>Example</h5><br>
   <% @word.memes.each do |meme| %>
-    <%= meme.image %>
       <% if meme.binary %>
-        <%= image_tag url_for(:controller => "memes", :action => "show_meme", :id => meme.id) %>
+        <%= image_tag url_for(:controller => "memes", :action => "show_meme", :id => meme.id),
+            size: "350x350", alt:"Meme" %>
       <% end %>
   <% end %>

@@ -6,10 +6,7 @@ class WordsController < ApplicationController
     @word = @group.words.new(word_params)
     @meme = @word.memes.new(meme_params)
 
-    puts "Below is the POST request"
-
-    # puts @response.body
-    @response = uni_get(response_for('memes'))
+    @response = uni_get(response_for('memes', name: @meme.image, top: @meme.top, bottom: @meme.bottom ))
     @meme.binary = @response.body
 
     respond_to do |format|
