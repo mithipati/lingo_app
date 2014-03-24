@@ -1,14 +1,7 @@
 <% provide(:title, @group.name) %>
-<%= render 'shared/error_messages' %>
 <div class="flash-message"></div>
 <%= link_to "Back to Groups", groups_path %>
-<%# if flash.present? %>
-  <%# flash.each do |msg| %>
-    <!-- <ul>
-      <li><%#= msg %></li>
-    </ul> -->
-  <%# end %>
-<%# end %>
+
 <h3>
   <%= @group.name %>
 </h3>

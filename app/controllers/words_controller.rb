@@ -14,7 +14,7 @@ class WordsController < ApplicationController
         format.json { render json: @word, status: :created, location: @word }
         format.js {}
       else
-        format.html { redirect_to root, notice: "Sorry error found" }
+        format.html { redirect_to @group, notice: "Sorry error found" }
         format.json { render json: @word.errors, status: :unprocessable_entity }
       end
     end
