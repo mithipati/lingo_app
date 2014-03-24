@@ -2,17 +2,22 @@ class WordsController < ApplicationController
   include ApplicationHelper
   before_action :set_instance_variables, only: [:create]
 
+  def show
+  end
+
   def create
     @word = @group.words.new(word_params)
     @meme = @word.memes.new(meme_params)
 
     @response = uni_get(response_for('memes', name: @meme.image, top: @meme.top, bottom: @meme.bottom ))
-    @meme.binary = @response.body
+    if !@meme.top.blank? || !@meme.bottom.blank?
+      @meme.binary = @response.body
+    end
 
     respond_to do |format|
       if @word.save
-        # put meme property here
-        if @meme.image.blank?
+        if @meme.top.blank? && @meme.bottom.blank?
+          # Figure out a way to not save meme without destroying it!
           @meme.destroy
         end
         format.html { redirect_to @group, notice: "Word created" }
