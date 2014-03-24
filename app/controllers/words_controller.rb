@@ -17,6 +17,7 @@ class WordsController < ApplicationController
 
     respond_to do |format|
       if @word.save
+        # put meme property here
         if @meme.image.blank?
           @meme.destroy
         end
