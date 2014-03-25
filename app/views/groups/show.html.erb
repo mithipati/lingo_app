@@ -2,49 +2,23 @@
 <div class="flash-message"></div>
 <%= link_to "Back to Groups", groups_path %>
 
-<h3>
-  <%= @group.name %>
-</h3>
-<%= @group.description %>
-<br>
+  <h3>
+    <%= @group.name %>
+  </h3>
+    <%= @group.description %>
+  <br>
 
-<div id="word-form">
-  <%= form_for([@group, Word.new], remote: true) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :definition %>
-    <%= f.text_area :definition %>
-
-    <%= fields_for(@meme) do |fa| %>
-      <%= fa.label :image %>
-      <%= fa.collection_select(:image,@response.body,:to_s,:to_s) %>
-      <%= fa.label :top %>
-      <%= fa.text_field :top %>
-      <%= fa.label :bottom %>
-      <%= fa.text_field :bottom %>
-    <% end %>
-    <%= f.submit 'Create', class: "btn btn-large btn-primary"%>
-  <% end %>
+<div class="main-form">
+  <div id="word-form">
+    <%= render 'main_form' %>
+  </div>
 </div>
 
 <div id="word-container">
-  <% @words.each do |word| %>
-  <h5>
-    <%= word.name %>
-  </h5>
-  <h5>Def</h5>
-    <%= word.definition %>
-  <br>
-  <h5>Example</h5>
-    <% word.memes.each do |meme| %>
-      <% if meme.binary %>
-        <%= image_tag url_for(:controller => "memes", :action => "show_meme", :id => meme.id),
-                              size: "350x350", alt:"Meme" %>
-      <% end %>
-    <% end %>
-  <% end %>
+  <%= render 'word' %>
     <%#= render @words %>
 </div>
+
 
 
 

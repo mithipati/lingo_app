@@ -14,6 +14,27 @@ include ApplicationHelper
 
   end
 
+  def add_meme
+    @meme = Meme.new
+    @group = Group.find(params[:id])
+    @response = uni_get(response_for('images'))
+
+    respond_to do |format|
+      # if @word.save
+      #   if @meme.top.blank? && @meme.bottom.blank?
+      #     # Figure out a way to not save meme without destroying it!
+      #     @meme.destroy
+      #   end
+        format.html { redirect_to @group, notice: "Meme created" }
+        format.json { render json: @word, status: :created, location: @word }
+        format.js {}
+      # else
+        # format.html { redirect_to @group, notice: "Sorry error found" }
+        # format.json { render json: @word.errors, status: :unprocessable_entity }
+      # end
+    end
+  end
+
   def new
     @group = Group.new
   end

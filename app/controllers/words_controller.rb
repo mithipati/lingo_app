@@ -3,6 +3,8 @@ class WordsController < ApplicationController
   before_action :set_instance_variables, only: [:create]
 
   def show
+    @word = Word.find(params[:id])
+    @memes = @word.memes
   end
 
   def create

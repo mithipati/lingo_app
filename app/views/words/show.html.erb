@@ -1,0 +1,12 @@
+<%= link_to "Back to #{@word.group.name}", @word.group %>
+<h1><%= @word.name %></h1>
+<br>
+<h3>Definition</h3>
+<p><%= @word.definition %></p>
+<h5>Example</h5>
+    <% @memes.each do |meme| %>
+      <% if meme.binary %>
+        <%= image_tag url_for(:controller => "memes", :action => "show_meme", :id => meme.id),
+                              size: "350x350", alt:"Meme" %>
+      <% end %>
+    <% end %>
