@@ -7,7 +7,11 @@
           <% if user_signed_in? %>
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Groups", groups_path %></li>
-            <li><%= link_to "My Account", user_url(current_user) %></li>
+            <li>
+              <%= link_to user_url(current_user) do %>
+                <%= image_tag current_user.profile_pic_url, id: "profile-pic", style: "width: 15px;" %>
+              <% end %>
+            </li>
             <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
           <% else %>

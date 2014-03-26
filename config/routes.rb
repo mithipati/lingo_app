@@ -5,6 +5,7 @@ LingoApp::Application.routes.draw do
     resources :words
     resources :subscriptions, only: [:create, :destroy]
   end
+  get '/add_meme', to: 'memes#add_meme', as: 'add_meme'
   resources :users, except: [:index]
 
   # get '/show_form', to: 'groups#show_form', as: "show_form"

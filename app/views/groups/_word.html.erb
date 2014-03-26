@@ -1,18 +1,19 @@
-<div class="word-instance">
-  <% @words.each do |word| %>
-  <h5>
-    <%= link_to word.name, word %>
-  </h5>
-  <h5>Def</h5>
-    <%= word.definition %>
-  <br>
-  <h5>Example</h5>
-    <% word.memes.each do |meme| %>
-      <% if meme.binary %>
-        <%= image_tag url_for(:controller => "memes", :action => "show_meme", :id => meme.id),
-                              size: "350x350", alt:"Meme" %>
+<% @words.each do |word| %>
+  <div class="word-instance">
+    <h5>
+      <%= link_to word.name, word %>
+    </h5>
+    <h5>Def</h5>
+      <%= word.definition %>
+    <br>
+    <h5>Example</h5>
+      <% word.memes.each do |meme| %>
+        <% if meme.binary %>
+          <%= image_tag url_for(:controller => "memes", :action => "show_meme", :id => meme.id),
+                                size: "350x350", alt:"Meme" %>
+        <% end %>
       <% end %>
-    <% end %>
-    <%#= link_to "Add meme", add_meme_path, remote: true %>
-  <% end %>
-</div>
+      <%= link_to "Add meme", add_meme_path, remote: true, data: { wordid: word.id }, class: "add-meme-link" %>
+  </div>
+<% end %>
+
