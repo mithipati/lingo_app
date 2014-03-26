@@ -4,3 +4,13 @@
 <div class="image-space">
   <%= image_tag @user.profile_pic_url, id: "profile-pic" %>
 </div>
+
+<div>
+  <% unless @groups.blank? %>
+    <% @groups.each do |group| %>
+      <%= group.name %>
+      <%#= render 'groups/word' %>
+    <% end %>
+  <% end %>
+</div>
+

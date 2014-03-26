@@ -4,14 +4,19 @@
 <h1>Groups:</h1>
 <div class="row">
   <% @groups.each do |group| %>
-  <div class="row group-container">
+  <div class="row-fluid group-container">
     <div class="small-4 columns image-space">
       <%= image_tag group.group_pic_url, id: "group-pic" %>
     </div>
-    <div class="small-8 columns text-space">
+    <div class="small-7 columns text-space">
       <p class="group-name">
         <%= link_to group.name, group_path(group) %>
         (<%= group.words.count %>)
+        <% unless current_user.subscriptions.where(group_id: group.id).blank? %>
+          <%= link_to "Following", group_subscription_path(group_id: group.id, id: current_user.subscriptions.where(group_id: group.id).first), method: :delete %>
+        <% else %>
+          <%= link_to "Follow", group_subscriptions_path(group_id: group.id), method: :post %>
+        <% end %>
       </p>
         <br>
       <p class="group-description">
