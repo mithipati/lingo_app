@@ -1,4 +1,5 @@
 LingoApp::Application.routes.draw do
+  devise_for :users
   resources :words, only: [:show]
   resources :groups, except: [:destroy] do
     resources :words do

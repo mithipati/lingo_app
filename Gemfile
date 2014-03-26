@@ -7,6 +7,7 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'foundation-rails'
 gem 'unirest'
 gem 'figaro'
+gem 'devise'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
