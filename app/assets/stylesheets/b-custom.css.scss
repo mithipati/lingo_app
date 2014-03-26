@@ -2,9 +2,18 @@
 
 /* universal */
 
-#profile-pic, #group-pic {
+.image-space {
+  height: 250px;
+  width: 250px;
   border-radius: 100%;
   border: 3px solid gray;
+  overflow: hidden;
+}
+
+.image-space img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .test-form {
