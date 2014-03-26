@@ -6,5 +6,5 @@ class Group < ActiveRecord::Base
             uniqueness: { case_sensitive: false }
   validates :description, length: { maximum: 140 }, allow_blank: true
 
-  # mount_uploader :group_pic, ImageUploader
+  mount_uploader :group_pic, GroupImageUploader
 end

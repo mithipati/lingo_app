@@ -6,7 +6,7 @@
   <% @groups.each do |group| %>
   <div class="row group-container">
     <div class="small-4 columns">
-      <img src="http://placehold.it/150x150">
+      <%= image_tag group.group_pic_url, id: "group-pic" %>
     </div>
     <div class="small-8 columns">
       <p class="group-name">
