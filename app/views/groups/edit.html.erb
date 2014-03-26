@@ -10,6 +10,9 @@
       <%= f.label :description %>
       <%= f.text_field :description %>
 
+      <%= f.file_field :group_pic %>
+      <%= f.label :group_pic, "Group Picture" %>
+
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>

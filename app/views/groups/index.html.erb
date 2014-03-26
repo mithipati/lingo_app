@@ -5,10 +5,10 @@
 <div class="row">
   <% @groups.each do |group| %>
   <div class="row group-container">
-    <div class="small-4 columns">
-      <img src="http://placehold.it/150x150">
+    <div class="small-4 columns image-space">
+      <%= image_tag group.group_pic_url, id: "group-pic" %>
     </div>
-    <div class="small-8 columns">
+    <div class="small-8 columns text-space">
       <p class="group-name">
         <%= link_to group.name, group_path(group) %>
         (<%= group.words.count %>)
