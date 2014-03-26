@@ -6,12 +6,12 @@ LingoApp::Application.routes.draw do
   end
   resources :users, except: [:index]
 
-  get '/add_meme/groups/:id', to: "groups#add_meme", as: "add_meme"
-  get '/memes', to: "words#show"
-  post '/memes', to: "words#create"
+  # get '/show_form', to: 'groups#show_form', as: "show_form"
+
+  # get '/add_meme/groups/:id', to: "groups#add_meme", as: "add_meme"
+  # get '/memes', to: "words#show"
+  # post '/memes', to: "words#create"
   get '/memes/show_meme', to: "memes#show_meme"
-
-
 
   root 'static_pages#home'
   match '/contact', to: 'static_pages#contact', via: 'get'

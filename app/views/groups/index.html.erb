@@ -1,5 +1,6 @@
 <% provide(:title, 'Groups') %>
 <%= link_to "Back", root_path %>
+<%= link_to "Create group", new_group_path, id: "create-group-link" %>
 <h1>Groups:</h1>
 <div class="row">
   <% @groups.each do |group| %>

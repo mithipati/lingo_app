@@ -14,6 +14,15 @@ include ApplicationHelper
 
   end
 
+  def show_form
+    @group = Group.find(params[:id])
+
+    respond_to do |format|
+      format.html { redirect_to @group }
+      format.js {}
+    end
+  end
+
   def add_meme
     @meme = Meme.new
     @group = Group.find(params[:id])
