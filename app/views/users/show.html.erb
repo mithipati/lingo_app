@@ -5,29 +5,11 @@
   <%= image_tag @user.profile_pic_url, id: "profile-pic" %>
 </div>
 
-  <%# unless @groups.blank? %>
 <% @groups.each do |group| %>
 <div class="group-instance">
   <h4>
     <%= link_to group.name, group_path(group) %>
   </h4>
-    <% group.words.each do |word| %>
-      <div class="word-instance">
-        <h5>
-          <%= word.name %>
-        </h5>
-        <h5>Def</h5>
-          <%= word.definition %>
-        <br>
-        <h5>Example</h5>
-          <% word.memes.each do |meme| %>
-            <% if meme.binary %>
-              <%= image_tag url_for(:controller => "memes", :action => "show_meme", :id => meme.id),
-                                    size: "350x350", alt:"Meme" %>
-            <% end %>
-          <% end %>
-      </div>
-  <% end %>
 </div>
 <% end %>
 
