@@ -1,26 +1,33 @@
 <% provide(:title, 'Groups') %>
 <%= link_to "Back", root_path %>
 <%= link_to "Create group", new_group_path, id: "create-group-link" %>
-<h1>Groups:</h1>
+<h1>Groups</h1>
 <div class="fluid-container">
   <% @groups.each do |group| %>
   <div class="row group-container">
-    <div class="col-xs-12 col-md-4 image-space">
-      <%= image_tag group.group_pic_url, id: "group-pic" %>
+    <div class="col-xs-12 col-md-5 image-space">
+      <div class="image-container">
+        <% unless group.group_pic_url.nil? %>
+          <%= image_tag group.group_pic_url, id: "group-pic" %>
+        <% end %>
+      </div>
     </div>
-    <div class="col-xs-12 col-md-8 text-space">
-      <p class="group-name">
+    <div class="col-xs-12 col-md-7 text-space">
+      <h3>
         <%= link_to group.name, group_path(group) %>
-        (<%= group.words.count %>)
+        <span class="badge"><%= group.words.count %></span>
+      </h3>
+      <span class="label label-info">
         <% unless current_user.subscriptions.where(group_id: group.id).blank? %>
           Following |
           <small>
-            <%= link_to "Unfollow", group_subscription_path(group_id: group.id, id: current_user.subscriptions.where(group_id: group.id).first), method: :delete %>
+            <%= link_to "Unfollow", group_subscription_path(group_id: group.id, id: current_user.subscriptions.where(group_id: group.id).first), method: :delete, class: "subscription-link" %>
           </small>
         <% else %>
-          <%= link_to "Follow", group_subscriptions_path(group_id: group.id), method: :post %>
+          <%= link_to "Follow", group_subscriptions_path(group_id: group.id), method: :post, class: "subscription-link" %>
         <% end %>
-      </p>
+      </span>
+        <br>
         <br>
       <p class="group-description">
         <%= group.description %>

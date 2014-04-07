@@ -3,13 +3,13 @@
 <head>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= stylesheet_link_tag "application", 'https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Josefin+Slab:400,700|Open+Sans:400,700', :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render 'layouts/header' %>
-  <%#= render 'shared/styleSample' %>
-  <div class="container">
+  <div class="main-container">
     <% if flash.present? %>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: name %>
@@ -18,6 +18,5 @@
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>
-  <%= debug(params) if Rails.env.development? %>
 </body>
 </html>
