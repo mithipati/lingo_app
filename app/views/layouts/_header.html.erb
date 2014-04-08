@@ -1,10 +1,10 @@
 <div class="head-page">
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default main-bar" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header logo-container">
       <%= link_to "Lingo", root_path, id: "logo" %>
     </div>
-    <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right icons">
       <% if user_signed_in? %>
         <li><%= link_to "Home", root_path, class: "nav-link top" %></li>
         <li><%= link_to "Groups", groups_path, class: "nav-link top" %></li>
