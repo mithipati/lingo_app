@@ -48,6 +48,9 @@ body {
   color: white;
 }
 
+.group-container:first-child {
+  margin-top: 50px;
+}
 
 .group-container{
   margin: auto;
@@ -203,6 +206,8 @@ footer ul li {
 //   width: 350px !important;
 //   height: 100% !important;
 // }
+
+// Group Show Page
 
 .word-container {
   margin-top: 5rem;
