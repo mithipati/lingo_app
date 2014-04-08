@@ -2,18 +2,22 @@
 <div class="flash-message"></div>
 <%= link_to "Back to Groups", groups_path %>
 
-  <h3>
+  <h2>
     <%= @group.name %>
-  </h3>
-    <%= @group.description %>
+  </h2>
+  <h4>
+    <blockquote><%= @group.description %>
+  </h4>
   <br>
 
 <div id="word-form">
   <%= render 'main_form' %>
 </div>
 
-<div id="word-container">
-  <%= render 'word' %>
+<div class="fluid-container">
+  <div class="row">
+    <%= render 'word' %>
+  </div>
 </div>
 
 <script type="text/javascript">

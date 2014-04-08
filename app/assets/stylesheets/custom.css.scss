@@ -108,19 +108,18 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 2.5em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
-  font-weight: normal;
-  color: #999;
+}
+
+h4 {
+  letter-spacing: 1px;
 }
 
 p {
-//   font-size: 1.1em;
   font-family: 'Open Sans', 'sans-serif';
   line-height: 1.7em;
 }
@@ -129,7 +128,6 @@ p {
 
 .logo-container{
   padding-left: 3em;
-  // padding-top: 0.5rem;
   margin-top: -0.15em;
 
   #logo {
@@ -152,7 +150,6 @@ p {
 
 .nav-link {
   font-family: 'Open Sans', 'sans-serif';
-  // font-weight: bold;
   font-size: 1.3em;
 }
 
@@ -202,9 +199,23 @@ footer ul li {
   clear:left;
 }
 
-#word-container {
-  float:right;
-  margin-right: 20em;
+// .panel {
+//   width: 350px !important;
+//   height: 100% !important;
+// }
+
+.word-container {
+  margin-top: 5rem;
+  margin-left: 3rem;
+  .definition-container {
+    height: 50px;
+    width: 350px;
+    overflow: auto;
+    word-wrap: break-word;
+  }
+}
+.meme-container {
+  margin-top: -1rem;
 }
 
 footer {

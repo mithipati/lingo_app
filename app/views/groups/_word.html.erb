@@ -1,19 +1,31 @@
 <% @words.each do |word| %>
-  <div class="word-instance">
-    <h5>
-      <%= link_to word.name, word %>
-    </h5>
-    <h5>Def</h5>
-      <%= word.definition %>
-    <br>
-    <h5>Example</h5>
-      <% word.memes.each do |meme| %>
-        <% if meme.binary %>
-          <%= image_tag url_for(:controller => "memes", :action => "show_meme", :id => meme.id),
-                                size: "350x350", alt:"Meme" %>
-        <% end %>
-      <% end %>
-      <%#= link_to "Add meme", add_meme_path, remote: true, data: { word_id: word.id }, class: "add-meme-link" %>
+  <div class ="col-xs-12 col-md-6">
+    <!-- <div class="word-container"> -->
+      <div class="panel panel-default word-container">
+        <div class="panel-heading">
+        <h3 class="word-name">
+          <%= link_to word.name, word %>
+        </h3>
+        </div>
+        <div class="panel-body">
+          <h4>Definition:</h4>
+          <div class="definition-container">
+            <%= word.definition %>
+          </div> <!-- definition closer -->
+          <div class="meme-container">
+          <% word.memes.each do |meme| %>
+            <% unless meme.binary.nil? %>
+              <h4>Example:</h4>
+              <%= image_tag url_for(:controller => "memes", :action => "show_meme", :id => meme.id),
+                                        size: "350x350", alt:"Meme" %>
+            <%# else %>
+              <!-- <p>None provided</p> -->
+            <% end %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
   </div>
 <% end %>
 
