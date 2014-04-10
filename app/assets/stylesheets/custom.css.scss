@@ -95,10 +95,13 @@ body {
   max-width: 15em;
   max-height: 15em;
   border-radius: 1rem;
+  margin-left: 4rem;
+  margin-top: 2rem;
 }
 
 .user-group {
   width: 30em;
+  margin-top: 2rem;
 }
 
 .test-form {
@@ -140,7 +143,7 @@ p {
 /* header */
 
 .logo-container{
-  padding-left: 3em;
+  padding-left: 4em;
   margin-top: -0.15em;
 
   #logo {
@@ -202,6 +205,19 @@ footer ul li {
   margin-left: 10px;
 }
 
+// Welcome message
+
+.welcome-container {
+  padding: 5rem;
+  text-align: center;
+  .maintext-container {
+  }
+  .subtext {
+    margin-top: 3rem;
+  }
+}
+
+
 // word form
 
 #word-form {
@@ -212,26 +228,45 @@ footer ul li {
   clear:left;
 }
 
-// .panel {
-//   width: 350px !important;
-//   height: 100% !important;
-// }
 
 // Group Show Page
 
-.word-container {
+// body .word-container {
+//   .word-heading {
+//     background-color: rgba(227,91,25, 0.5);
+//     width: 100%;
+//   }
+//   .word-body {
+//     margin-top: 2.5rem;
+//   }
+// }
+
+body .panel.word-container {
+  margin-left: 1.5rem;
   margin-top: 5rem;
-  margin-left: 3rem;
+  width: 355px;
+  border: none;
+  .panel-heading.word {
+    width: 370px;
+    border: none;
+  }
+  .panel-body.word {
+    width: 350px;
+    border: none;
   .definition-container {
     height: 50px;
-    width: 350px;
-    overflow: auto;
+    width: 300px;
     word-wrap: break-word;
+    overflow: none;
+  .meme-container {
+    // margin-top: 1.5rem;
+    }
+  }
   }
 }
-.meme-container {
-  margin-top: -1rem;
-}
+
+
+// Footer
 
 footer {
   clear: both;

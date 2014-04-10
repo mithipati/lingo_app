@@ -1,14 +1,15 @@
 <% provide(:title, @group.name) %>
 <div class="flash-message"></div>
-<%= link_to "Back to Groups", groups_path %>
+<%= link_to "Back", groups_path %>
 
-  <h2>
-    <%= @group.name %>
-  </h2>
-  <h4>
-    <blockquote><%= @group.description %>
-  </h4>
-  <br>
+<h2>
+  <%= @group.name %>
+</h2>
+<h4>
+  <blockquote><%= @group.description %>
+</h4>
+
+<br>
 
 <div id="word-form">
   <%= render 'main_form' %>
