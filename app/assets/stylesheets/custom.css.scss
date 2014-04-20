@@ -84,11 +84,31 @@ body {
   }
 }
 
+// .loginContainer {
+//   background-image: url(http://www.healthsprout.com/wp-content/uploads/2013/04/beach.jpg)
+// }
+
+.loginForm {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.signupForm {
+  max-width: 30rem;
+}
+
+.userButton {
+  float: right;
+}
+
+.extraLinks {
+  clear: both;
+}
 
 #profile-pic {
   max-width: 5rem;
   max-height: 5rem;
-  border-radius: 1rem;
+  border-radius: 50%;
 }
 
 .profile-pic-show {
