@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'hirb'
 gem 'bootstrap-sass', '~> 3.1.1'
+gem "font-awesome-rails"
 gem 'unirest'
 gem 'figaro'
 gem 'devise'
