@@ -16,6 +16,8 @@
   box-shadow: 1px 1px 11px #888888;
   .icons {
     margin-top: -1em;
+    margin-right: 15%;
+    float: right;
   }
 }
 
@@ -84,6 +86,17 @@ body {
   }
 }
 
+.addGroups {
+  float: right;
+  margin-right: 13rem;
+  h4 {
+    display: inline-block;
+  }
+  a {
+    margin-left: 1rem;
+  }
+}
+
 // .loginContainer {
 //   background-image: url(http://www.healthsprout.com/wp-content/uploads/2013/04/beach.jpg)
 // }
@@ -106,9 +119,10 @@ body {
 }
 
 #profile-pic {
-  max-width: 5rem;
-  max-height: 5rem;
-  border-radius: 50%;
+  max-width: 4rem;
+  max-height: 4rem;
+  margin-top: 0.5rem;
+  // border-radius: 100%;
 }
 
 .profile-pic-show {
@@ -163,8 +177,9 @@ p {
 /* header */
 
 .logo-container{
-  padding-left: 6em;
+  margin-left: 15%;
   margin-top: -0.15em;
+  float: left;
 
   #logo {
     letter-spacing: -1px;
