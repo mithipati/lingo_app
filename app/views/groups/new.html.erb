@@ -1,3 +1,6 @@
+<%= link_to "", groups_path, class: 'btn btn-lg btn-default fa fa-arrow-left' %>
+<br>
+<br>
 <h1>New group</h1>
 <%= render 'shared/error_messages' %>
 <%= form_for(@group) do |f| %>
@@ -11,7 +14,7 @@
     <%= f.label :group_pic, "Group Picture" %>
     <%= f.file_field :group_pic %>
     <br>
-    <%= f.submit 'Create group', class: "btn btn-lg btn-default userButton" %>
+    <%= f.submit 'Create', class: "btn btn-lg btn-default userButton" %>
   </div>
 <% end %>
 <br>

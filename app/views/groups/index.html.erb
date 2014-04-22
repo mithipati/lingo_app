@@ -1,7 +1,8 @@
 <% provide(:title, 'Groups') %>
-<%= link_to "Back", root_path %>
-<%= link_to "Create group", new_group_path, id: "create-group-link" %>
+<div class='groupHeader'>
 <h1>Groups</h1>
+<%= link_to "", new_group_path, class: 'btn btn-lg btn-default fa fa-plus' %>
+</div>
 <div class="fluid-container">
   <% @groups.each do |group| %>
   <div class="row group-container">

@@ -27,6 +27,10 @@ body {
   overflow: auto;
 }
 
+.backButton {
+  font-size: 2.5rem;
+}
+
 .main-container {
   border: 1px solid black;
   margin: 0 auto;
@@ -46,12 +50,26 @@ body {
 
 //Group Index
 
+
+.groupHeader {
+  h1 {
+    float: left;
+    display: inline-block;
+  }
+  a {
+    float: left;
+    margin-top: 2.2rem;
+    margin-left: 1.5rem;
+  }
+}
+
 .subscription-link {
   color: white;
 }
 
 .group-container:first-child {
-  margin-top: 50px;
+  padding-top: 5rem;
+  clear: both;
 }
 
 .group-container{
@@ -82,7 +100,7 @@ body {
     padding-top: 20px;
     padding-left: 50px;
     float: right;
-    border: 1px black solid;
+    // border: 1px black solid;
   }
 }
 
