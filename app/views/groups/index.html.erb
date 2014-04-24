@@ -8,9 +8,7 @@
   <div class="row group-container">
     <div class="col-xs-12 col-md-5 image-space">
       <div class="image-container">
-        <% unless group.group_pic_url.nil? %>
-          <%= image_tag group.group_pic_url, id: "group-pic" %>
-        <% end %>
+        <%= image_tag group.group_pic_url %>
       </div>
     </div>
     <div class="col-xs-12 col-md-7 text-space">
