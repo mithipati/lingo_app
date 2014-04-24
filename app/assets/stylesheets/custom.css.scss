@@ -302,8 +302,10 @@ footer ul li {
     padding-bottom: 3rem;
   }
   .modal-body {
-    padding: 1rem;
+    padding-left: -1rem;
     padding-bottom: 10rem;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
   }
 }
 
