@@ -1,27 +1,18 @@
 <% provide(:title, @group.name) %>
 <div class="flash-message"></div>
 <%= link_to "Back", groups_path %>
-
-<h2>
-  <%= @group.name %>
-</h2>
-<h4>
-  <blockquote><%= @group.description %>
-</h4>
-
+<!-- Page header -->
+<h2><%= @group.name %></h2>
+<h4><blockquote><%= @group.description %></h4>
 <br>
-
-<div id="word-form">
-  <%= render 'main_form' %>
-</div>
-
+<!-- New word form -->
+<%= link_to '  Add lingo', add_meme_path, {:remote => true, id: @group.id,'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-lg btn-default fa fa-plus'} %>
+<div id="modal-window" class="modal fade" tabindex='-1' role="dialog" aria-hidden="true"></div>
+<!-- All words -->
 <div class="fluid-container">
-  <div class="row">
+  <div class="row" id='word-box'>
     <%= render 'word' %>
   </div>
 </div>
 
-<script type="text/javascript">
-  $('.word-instance').on('click', '.add-meme-link', function() { alert($(this).data('word_id')) });
-</script>
 

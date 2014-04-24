@@ -10,16 +10,19 @@ class WordsController < ApplicationController
   def create
     @word = @group.words.new(word_params)
     @meme = @word.memes.new(meme_params)
-
     @response = uni_get(response_for('memes', name: @meme.image, top: @meme.top, bottom: @meme.bottom ))
+
     if !@meme.top.blank? || !@meme.bottom.blank?
       @meme.binary = @response.body
+    end
+
+    if @meme.image == ""
+      @meme.binary = nil
     end
 
     respond_to do |format|
       if @word.save
         if @meme.top.blank? && @meme.bottom.blank?
-          # Figure out a way to not save meme without destroying it!
           @meme.destroy
         end
         format.html { redirect_to @group, notice: "Word created" }

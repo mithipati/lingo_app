@@ -23,11 +23,6 @@ module ApplicationHelper
         top = percent_encode(meme_options[:top])
         bottom = percent_encode(meme_options[:bottom])
 
-        # name = percent_encode(options[:name]) || "Y%20U%20No"
-        # top = percent_encode(options[:top]) || "Y%20U%20No"
-        # bottom = percent_encode(options[:bottom]) || "like%20JavaScript"
-        # font = percent_encode(options[:font]) || "Impact"
-        # size = options[:size] || 50
         full_url = base_url + "/meme?meme=#{name}&top=#{top}&bottom=#{bottom}&font=Impact&font_size=50"
     when "fonts"
       full_url = base_url + "/fonts"

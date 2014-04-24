@@ -278,6 +278,10 @@ footer ul li {
 .welcome-container {
   padding: 5rem;
   text-align: center;
+  // background-image: url('/assets/lingo-logo-total.png');
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  // background-position: center;
   .maintext-container {
   }
   .subtext {
@@ -288,14 +292,20 @@ footer ul li {
 
 // word form
 
-#word-form {
-  float:left;
+.word-meme-show {
+  text-align: center;
 }
 
-#meme-form {
-  clear:left;
+#modal-window {
+  margin-top: 4rem;
+  .modal-header {
+    padding-bottom: 3rem;
+  }
+  .modal-body {
+    padding: 1rem;
+    padding-bottom: 10rem;
+  }
 }
-
 
 // Group Show Page
 
@@ -324,8 +334,17 @@ body .panel.word-container {
   }
 }
 
+.logo-l {
+  img {
+    margin-top: -4rem;
+    width: 300px;
+  }
+}
 
 // Footer
+.edit-footer {
+  clear: both;
+}
 
 footer {
   clear: both;

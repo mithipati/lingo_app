@@ -1,16 +1,22 @@
 <%= form_for([@group, Word.new], remote: true) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class='loginForm'>
+    <%= f.label :name, "Word" %>
+    <%= f.text_field :name, autofocus: true, class: 'form-control' %>
     <%= f.label :definition %>
-    <%= f.text_area :definition %>
+    <%= f.text_area :definition, class: 'form-control' %>
 
     <%= fields_for(@meme) do |fa| %>
+      <br>
       <%= fa.label :image %>
-      <%= fa.collection_select(:image,@response.body,:to_s,:to_s) %>
-      <%= fa.label :top %>
-      <%= fa.text_field :top %>
-      <%= fa.label :bottom %>
-      <%= fa.text_field :bottom %>
+      <%= fa.collection_select(:image,@response.body,:to_s,:to_s,
+      { :include_blank => 'Please select one ...' }) %>
+      <br>
+      <br>
+      <%= fa.label :top, "Top text" %>
+      <%= fa.text_field :top, class: 'form-control' %>
+      <%= fa.label :bottom, "Bottom text" %>
+      <%= fa.text_field :bottom, class: 'form-control' %>
+  </div>
     <% end %>
-  <%= f.submit 'Create', class: "btn btn-large btn-primary"%>
+  <%= f.submit 'Create', class: "btn btn-lg btn-default userButton", style: 'margin-top: 3rem' %>
 <% end %>

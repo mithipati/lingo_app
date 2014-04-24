@@ -1,9 +1,0 @@
-<%= form_for(@meme) do |f| %>
-    <%= f.label :image %>
-    <%= f.collection_select(:image,@response.body,:to_s,:to_s) %>
-    <%= f.label :top %>
-    <%= f.text_field :top %>
-    <%= f.label :bottom %>
-    <%= f.text_field :bottom %>
-    <%= f.submit 'Add meme', class: "btn btn-large btn-primary"%>
-<% end %>

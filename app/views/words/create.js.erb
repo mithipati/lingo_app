@@ -1,4 +1,5 @@
-$("<%= escape_javascript(render 'word') %>").prependTo("#word-container");
+$("<%= escape_javascript(render 'word') %>").prependTo("#word-box");
+$("#modal-window").modal('hide');
 $(".flash-message").html("Word added!");
 $("#word_name").val('');
 $("#word_definition").val('');

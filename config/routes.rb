@@ -1,20 +1,13 @@
 LingoApp::Application.routes.draw do
   devise_for :users
-  resources :words, only: [:show]
+  resources :users, except: [:index]
   resources :groups, except: [:destroy] do
     resources :words
     resources :subscriptions, only: [:create, :destroy]
   end
-  get '/add_meme', to: 'memes#add_meme', as: 'add_meme'
-  resources :users, except: [:index]
-
-  # get '/show_form', to: 'groups#show_form', as: "show_form"
-
-  # get '/add_meme/groups/:id', to: "groups#add_meme", as: "add_meme"
-  # get '/memes', to: "words#show"
-  # post '/memes', to: "words#create"
+  resources :words, only: [:show]
+  get '/:id/add_meme', to: 'groups#add_meme', as: :add_meme
   get '/memes/show_meme', to: "memes#show_meme"
-
   root 'static_pages#home'
   match '/contact', to: 'static_pages#contact', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
