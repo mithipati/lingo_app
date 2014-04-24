@@ -27,6 +27,7 @@ include ApplicationHelper
   def create
     @group = Group.new(group_params)
     if @group.save
+      if @group.group_pic.blank?
       flash[:success] = "Group created"
       redirect_to @group
     else
