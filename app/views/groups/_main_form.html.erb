@@ -3,15 +3,14 @@
     <%= f.label :name, "Word" %>
     <%= f.text_field :name, autofocus: true, class: 'form-control' %>
     <%= f.label :definition %>
-    <%= f.text_area :definition, class: 'form-control' %>
+    <%= f.text_area :definition, class: 'form-control word-definition' %>
 
     <%= fields_for(@meme) do |fa| %>
-      <br>
-      <%= fa.label :image %>
-      <%= fa.collection_select(:image,@response.body,:to_s,:to_s,
-      { :include_blank => 'Please select one ...' }) %>
-      <br>
-      <br>
+      <div class='meme-select'>
+        <%= fa.label :image, "Meme" %>
+        <%= fa.collection_select(:image,@response.body,:to_s,:to_s,
+        { :include_blank => 'Select a meme ...' }) %>
+      </div>
       <%= fa.label :top, "Top text" %>
       <%= fa.text_field :top, class: 'form-control' %>
       <%= fa.label :bottom, "Bottom text" %>

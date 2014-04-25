@@ -124,6 +124,16 @@ body {
 .loginForm {
   max-width: 40rem;
   margin: 0 auto;
+  .meme-select {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 8rem;
+  max-height: 8rem;
 }
 
 .signupForm {
