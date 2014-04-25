@@ -2,13 +2,13 @@
 
 ### About
 
-Application for sharing lingo in various groups.
+Application for sharing lingo in various groups. Add your own words, make your own memes, and follow groups in a fun and creative atmosphere.
 
 ### Technologies Used
 
-* Backend: Rails
+* Backend: Ruby on Rails
 * Frontend: JavaScript, Twitter Bootstrap
-* APIs: Urban Dictionary, Meme Generator
+* APIs: Meme Generator
 
 ### Contributing
 
@@ -21,3 +21,4 @@ Application for sharing lingo in various groups.
 ## Enjoy!
 
 Contact: [@mithipati](https://twitter.com/mithipati)
+Blog: [Coding & Lattes](http://mithipati.wordpress.com)
